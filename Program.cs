@@ -34,6 +34,36 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+        int weaponDamage = CalculateWeaponDamage(40, 15);
+        int remainingHP = 150;
+        do
+        {
+            remainingHP = CalculateRemainingHealth(remainingHP, weaponDamage);
+            DisplayBossStatut(remainingHP);
+
+        } while (Console.ReadLine() == "Attaquer");
+    }
+    static int CalculateWeaponDamage(int weaponPower, int Bonus)
+    {
+        int weaponDamage = weaponPower + Bonus;
+        return weaponDamage;
+    }
+    static int CalculateRemainingHealth(int bossHP, int weaponDamage)
+    {
+        int remainingHP = bossHP - weaponDamage;
+        return remainingHP;
+    }
+    static void DisplayBossStatut(int remainingHP)
+    {
+        do
+        {
+            Console.WriteLine("Le boss a " + remainingHP + " HP restants !");
+            Console.WriteLine("Voulez vous attaquer de nouveau? Si oui, tapez Attaquer");
+
+        } while (Console.ReadLine() == "Attaquer");
+        if (remainingHP <= 0)
+        {
+            Console.WriteLine("Le boss est vaincu, tu as gagné");
+        }
     }
 }
