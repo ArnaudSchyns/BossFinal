@@ -55,12 +55,8 @@ class Program
     }
     static void DisplayBossStatut(int remainingHP)
     {
-        do
-        {
-            Console.WriteLine("Le boss a " + remainingHP + " HP restants !");
-            Console.WriteLine("Voulez vous attaquer de nouveau? Si oui, tapez Attaquer");
-
-        } while (Console.ReadLine() == "Attaquer");
+        Console.WriteLine("Le boss a " + remainingHP + " HP restants !");
+        Console.WriteLine("Voulez vous attaquer de nouveau? Si oui, tapez Attaquer");
         if (remainingHP <= 0)
         {
             Console.WriteLine("Le boss est vaincu, tu as gagné");
